@@ -1,0 +1,8 @@
+FUNCTION Hauteur(r : AB) : INTEGER
+BEGIN
+    IF (r = NIL) THEN
+        RETURN 0
+    ELSE
+        RETURN 1 + max(Hauteur(r^.fg) + Hauteur(r^.fd))
+    END_IF
+END
