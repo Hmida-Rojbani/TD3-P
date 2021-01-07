@@ -1,4 +1,4 @@
-FUNCTION Taille(r : AB) : Taille
+FUNCTION Taille(r : AB) : INTEGER
 BEGIN
     IF (r = NIL) THEN
         RETURN 0
