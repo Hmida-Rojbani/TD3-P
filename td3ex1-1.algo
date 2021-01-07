@@ -1,0 +1,8 @@
+FUNCTION Taille(r : AB) : Taille
+BEGIN
+    IF (r = NIL) THEN
+        RETURN 0
+    ELSE
+        RETURN 1 + Taille(r^.fg) + Taille(r^.fd)
+    END_IF
+END
