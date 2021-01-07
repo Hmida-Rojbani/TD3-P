@@ -1,0 +1,29 @@
+FUNCTION Tester(r: AB) : BOOLEAN
+
+BEGIN
+    IF (r = NIL) THEN
+        RETURN TRUE
+    ELSE_IF (r^.val >= max_ab(r^.fg) AND r^.val < min_ab(r^.fd)) THEN
+        RETURN Tester(r^.fg) AND Tester(r^.fd)
+    ELSE
+        RETURN FALSE
+    END_IF
+END
+
+FUNCTION max_ab(r :AB) : INTEGER
+BEGIN
+    IF (feuille(r)) THEN
+        RETURN r^.val
+    ELSE
+        RETURN max(max_ab(r^.fg),max_ab(r^.fd))
+    END_IF
+END
+     
+FUNCTION min_ab(r :AB) : INTEGER
+BEGIN
+    IF (feuille(r)) THEN
+        RETURN r^.val
+    ELSE
+        RETURN min(min_ab(r^.fg),min_ab(r^.fd))
+    END_IF
+END
