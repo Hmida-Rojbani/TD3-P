@@ -1,0 +1,33 @@
+PROCEDURE inserer(VAR A : ABR, val : INTEGER)
+VAR
+    pere, p : ABR
+BEGIN
+    IF (A = NIL) THEN
+        A := creer_noeud()
+        A^.val := val
+        A^.fg := NIL
+        A^.fd := NIL
+    ELSE 
+        p := A
+        WHILE (p <> NIL) DO
+            pere := p
+            IF (val <= p.^val) THEN
+                p := p^.fg
+            ELSE
+                p := p^.fd
+            END_IF
+        END_WHILE
+
+        p := creer_noeud()
+        p^.val := val
+        p^.fg := NIL
+        p^.fd := NIL
+        IF ( val <= pere^.val) THEN
+            pere^.fg := p
+        ELSE
+            pere^.fd := p
+        END_IF
+    END_IF
+    
+
+END
