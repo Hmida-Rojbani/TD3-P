@@ -1,0 +1,22 @@
+FUNCTION RechercheOcc(A :ABR, x: INTEGER, n : INTEGER) : ABR
+BEGIN
+    IF (A = NIL) THEN
+        RETURN NIL
+    ELSE
+        IF (A^.val = x) THEN
+            IF (n-1 = 0) THEN
+                RETURN A
+            ELSE
+                RechercheOcc(A^.fg, x ,n-1)
+            END_IF
+        ELSE_IF(A^.val < x)   
+            RechercheOcc(A^.fd, x ,n)
+        ELSE
+            RechercheOcc(A^.fg, x ,n)
+        END_IF
+    END_IF
+END
+
+
+          
+    
