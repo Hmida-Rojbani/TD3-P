@@ -1,0 +1,7 @@
+PROCEDURE Construire(VAR A : ABR, list : List)
+BEGIN
+    IF (list <> NIL) THEN
+        inserer(A, list^.val)
+        Construire(A,list^.suiv)
+    END_IF
+END
