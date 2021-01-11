@@ -1,0 +1,9 @@
+PROCEDURE Affiche_Croissant(A : ABR)
+
+BEGIN
+    IF (A <> NIL) THEN
+        Affiche_Croissant(A^.fg)
+        afficher(A^.val)
+        Affiche_Croissant(A^.fd)
+    END_IF
+END
