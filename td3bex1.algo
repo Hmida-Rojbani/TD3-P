@@ -1,0 +1,10 @@
+FUNCTION plusPetit(A : ABR) : INTEGER
+VAR
+    set_declarations
+BEGIN
+    IF (A^.fg = NIL) THEN
+        RETURN A^.val
+    ELSE 
+        RETURN plusPetit(A^.fg)
+    END_IF
+END
