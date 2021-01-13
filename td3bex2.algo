@@ -1,0 +1,15 @@
+FUNCTION parcours(A: AB, L : LS) : INTEGER
+BEGIN
+    IF (A = NIL) THEN
+        RETURN NIL
+    END
+    IF (L <> NIL) THEN
+        IF (L^.val = 0) THEN
+            RETURN parcours(A^.fg, L^.next)
+        ELSE
+            RETURN parcours(A^.fd, L^.next)
+        END_IF
+    ELSE
+        RETURN A^.val
+    END_IF
+END
